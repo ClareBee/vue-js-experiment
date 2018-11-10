@@ -6,7 +6,7 @@
           {{ index }}. {{ data.skill }}
         </li>
       </ul>
-      <div v-bind:class="alertObject">
+      <div v-bind:style="{ backgroundColor: bgColor, width: bgWidth, height: bgHeight }">
       </div>
     </div>
   </div>
@@ -21,10 +21,9 @@ export default {
       { "skill": "Vue.js" },
       { "skill": "React" },
       ],
-      alertObject: {
-        alert: true,
-        'another-class': true
-      }
+      bgColor: '#eee',
+      bgWidth: '100%',
+      bgHeight: '30px'
     }
   }
 }
