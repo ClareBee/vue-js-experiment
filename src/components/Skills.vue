@@ -2,9 +2,13 @@
   <div class="hello">
     <div class="holder">
       <ul>
-      <li v-for="(data, index) in skills" :key="index">{{ index }}. {{ data.skill }}
-      </li>
+        <li v-for="(data, index) in skills" :key="index">
+          {{ index }}. {{ data.skill }}
+        </li>
       </ul>
+      <p v-if="skills.length > 1">You have more than one skill</p>
+      <p v-else>You have 1 or less skills</p>
+
     </div>
   </div>
 </template>
