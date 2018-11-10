@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <div class="holder">
+    <input type="text" placeholder="Enter a skill..." v-model="skill">
+    {{ skill }}
       <ul>
         <li v-for="(data, index) in skills" :key="index">
           {{ data.skill }}
@@ -16,6 +18,7 @@ export default {
   name: 'Skills',
   data() {
     return {
+      skill: '',
       skills: [
       { "skill": "Vue.js" },
       { "skill": "React" },
@@ -50,5 +53,13 @@ export default {
   }
   .container {
     box-shadow: 0px 0px 40px lightgray;
+  }
+  input {
+    width: calc(100% - 40px);
+    border: 0;
+    padding: 20px;
+    font-size: 1.3em;
+    background-color: #323333;
+    color: #687F7F;
   }
 </style>
