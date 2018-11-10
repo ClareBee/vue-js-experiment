@@ -1,12 +1,20 @@
 <template>
   <div class="hello">
-  Skills
+    {{ name }}
+    {{ btnState ? 'The button is disabled' : 'The button is active' }}
+    <button v-on:click="changeName" v-bind:disabled="btnState">Change Name</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld'
+  name: 'Skills',
+  data() {
+    return {
+      name: 'Vue Experiment',
+      btnState: true
+    }
+  }
 }
 </script>
 
