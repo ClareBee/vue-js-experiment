@@ -22,7 +22,7 @@ export default {
       skill: '',
       skills: [
       { "skill": "Vue.js" },
-      { "skill": "React" },
+      { "skill": "React" }
       ]
     }
   },
