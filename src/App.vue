@@ -17,12 +17,21 @@ export default {
 
 <!-- global styles -->
 <style>
-#app {
+body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #eee;
+  display: grid;
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: center;
+}
+body, html {
+  margin: 0;
+  height: 100%;
+}
+#app {
+  width: 50%;
 }
 </style>

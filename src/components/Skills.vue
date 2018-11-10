@@ -3,11 +3,10 @@
     <div class="holder">
       <ul>
         <li v-for="(data, index) in skills" :key="index">
-          {{ index }}. {{ data.skill }}
+          {{ data.skill }}
         </li>
       </ul>
-      <div v-bind:style="{ backgroundColor: bgColor, width: bgWidth, height: bgHeight }">
-      </div>
+      <p>These are your skills</p>
     </div>
   </div>
 </template>
@@ -20,10 +19,7 @@ export default {
       skills: [
       { "skill": "Vue.js" },
       { "skill": "React" },
-      ],
-      bgColor: '#eee',
-      bgWidth: '100%',
-      bgHeight: '30px'
+      ]
     }
   }
 }
@@ -31,15 +27,28 @@ export default {
 
 <!-- "scoped" attribute limits CSS to this component only -->
 <style scoped>
+  .holder {
+    background: #fff;
+  }
   ul {
-    list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
   }
-  .alert {
-    background: #eee;
-    width: 100%;
-    height: 30px;
+  ul li {
+    padding: 20px;
+    font-size: 1.3em;
+    background-color: #E0EDF4;
+    border-left: 5px solid #3EB3F6;
+    margin-bottom: 2px;
+    color: #3E5252;
   }
-  .another-class {
-    border: 5px solid grey;
+  p {
+    text-align: center;
+    padding: 30px 0;
+    color: #3E5252;
+  }
+  .container {
+    box-shadow: 0px 0px 40px lightgray;
   }
 </style>
