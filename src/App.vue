@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <Skills />
+      <nav>
+        <router-link to="/">Home</router-link>
+        <router-link to="/about">About</router-link>
+      </nav>
+    <router-view/>
   </div>
 </template>
 
@@ -17,21 +21,30 @@ export default {
 
 <!-- global styles -->
 <style>
-body {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #eee;
-  display: grid;
-  grid-template-rows: auto;
-  justify-items: center;
-  align-items: center;
-}
-body, html {
-  margin: 0;
-  height: 100%;
-}
-#app {
-  width: 50%;
-}
+  #app {
+    width: 50%;
+  }
+  body {
+    background-color: #EEEEEE;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  display: grid;
+    grid-template-rows: auto;
+    justify-items: center;
+    padding-top: 50px;
+  }
+
+  nav {
+    padding: 20px 20px 20px 0;
+  }
+
+  nav a {
+    padding: 10px;
+    text-decoration: none;
+    background: #fff;
+    border-radius: 3px;
+    color: rgb(0, 110, 255);
+    font-weight: bold;
+    margin-right: 15px;
+  }
 </style>
