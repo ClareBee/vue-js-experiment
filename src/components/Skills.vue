@@ -6,9 +6,8 @@
           {{ index }}. {{ data.skill }}
         </li>
       </ul>
-      <p v-if="skills.length > 1">You have more than one skill</p>
-      <p v-else>You have 1 or less skills</p>
-
+      <div v-bind:class="{ alert: showAlert }">
+      </div>
     </div>
   </div>
 </template>
@@ -21,12 +20,21 @@ export default {
       skills: [
       { "skill": "Vue.js" },
       { "skill": "React" },
-      ]
+      ],
+      showAlert: true
     }
   }
 }
 </script>
 
 <!-- "scoped" attribute limits CSS to this component only -->
-<style src="./Skills.css" scoped>
+<style scoped>
+  ul {
+    list-style: none;
+  }
+  .alert {
+    background: #eee;
+    width: 100%;
+    height: 30px;
+  }
 </style>
