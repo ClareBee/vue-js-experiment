@@ -6,7 +6,7 @@
           {{ index }}. {{ data.skill }}
         </li>
       </ul>
-      <div v-bind:class="{ alert: showAlert }">
+      <div v-bind:class="{ alert: showAlert, 'another-class': showClass }">
       </div>
     </div>
   </div>
@@ -21,7 +21,8 @@ export default {
       { "skill": "Vue.js" },
       { "skill": "React" },
       ],
-      showAlert: true
+      showAlert: true,
+      showClass: true
     }
   }
 }
@@ -36,5 +37,8 @@ export default {
     background: #eee;
     width: 100%;
     height: 30px;
+  }
+  .another-class {
+    border: 5px solid grey;
   }
 </style>
