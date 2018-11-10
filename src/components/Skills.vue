@@ -2,7 +2,8 @@
   <div class="hello">
     <div class="holder">
     <form @submit.prevent="addSkill">
-      <input type="text" placeholder="Enter a skill..." v-model="skill">
+      <input type="text" placeholder="Enter a skill..." v-model="skill" v-validate="'min:5'" name="skill" >
+      <p class="alert" v-if="errors.has('skill')">{{ errors.first('skill')}}</p>
     </form>
       <ul>
         <li v-for="(data, index) in skills" :key="index">
@@ -28,8 +29,15 @@ export default {
   },
   methods: {
     addSkill() {
-      this.skills.push({skill: this.skill})
-      this.skill = '';
+      this.$validator.validateAll().then((result) => {
+        if(result) {
+          this.skills.push({skill: this.skill})
+          this.skill = '';
+        } else {
+          console.log('not successful')
+        }
+      })
+
     }
   }
 }
@@ -68,5 +76,12 @@ export default {
     font-size: 1.3em;
     background-color: #323333;
     color: #687F7F;
+  }
+  .alert {
+    background: #fdf2ce;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px;
+    margin-top: -20px;
   }
 </style>
